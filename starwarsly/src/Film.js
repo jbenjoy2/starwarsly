@@ -7,7 +7,6 @@ import Sublist from "./Sublist";
 function Film() {
   const { id } = useParams();
   const film = useSelector(st => st.films[id]);
-  console.log(film);
   const planetState = useSelector(st => st.planets);
   const characterState = useSelector(st => st.people);
   const dispatch = useDispatch();
