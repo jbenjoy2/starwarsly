@@ -9,8 +9,11 @@ import { Provider } from "react-redux";
 import { store, persistedStore } from "./store";
 
 ReactDOM.render(
+  // use main store (not persisting store) as redux provider
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistedStore}>
+      {" "}
+      {/*Create persisting store from redux-persist*/}
       <App />
     </PersistGate>
   </Provider>,

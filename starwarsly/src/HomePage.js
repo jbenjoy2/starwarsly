@@ -1,25 +1,25 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 
 import { resetAll } from "./actions/reset";
 
-
 function HomePage() {
+  /**
+   * Main landing page
+   * if any film has been loaded, it renders the reset button; otherwise the button to start exploring with a new hope
+   */
   const loaded = useSelector(st => st.films[1] !== undefined);
   const dispatch = useDispatch();
 
   function reset() {
     dispatch(resetAll());
   }
-  
+
   return (
     <>
       {loaded ? (
-        <button
-          className="btn btn-danger btn-block btn-lg"
-          onClick={reset}
-        >
+        <button className="btn btn-danger btn-block btn-lg" onClick={reset}>
           Reset To Fresh Exploration
         </button>
       ) : (

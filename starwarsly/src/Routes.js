@@ -9,6 +9,7 @@ import Person from "./Person";
 import HomePage from "./HomePage";
 
 function Routes() {
+  // react router Routes component; does not have a catch-all redirect
   return (
     <Switch>
       <Route exact path="/">
