@@ -66,3 +66,49 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+---
+
+# Starwarsly
+
+### Techstack:
+
+- React (create-react-app)
+- Redux
+- Redux-persist
+- Redux-thunk
+- React-router
+- axios (to ping the Star Wars Api)
+
+### App flow
+
+`Starwarsly` is an online adventure through the Star Wars saga. The landing page conditionally displays either a reset button if a user has previously visited any part of the app, or a button to start exploring the saga.
+
+![film loaded home page](static/loadedHome.png)
+(loaded)
+
+![film not loaded home page](static/notLoaded.png)
+(not yet loaded)
+
+On all pages, there is a navbar to take a user either to the home landing page (by clicking the Brand), or to the list pages of Films, Planets, and People from the star wars universe. If any film, planet, or character is visited, it is added to its corresponding page. Until then, a message is displayed saying none have been explored yet.
+
+![not explored yet](static/noneExplored.png)
+(not yet explored)
+
+![film explored](static/explored.png)
+(not yet loaded)
+
+Upon exploring a film, person, or planet, details about it are pulled from the Star Wars API to and displayed to the user, with links to other relevant resources relating to it (for a film, there are links to planets and characters, for a planet, there are links to characters from there and to films its seen in, etc). However, until a resource in those lists has been explored, its title is displayed as "unknown" to keep the adventure alive!
+
+![film page with unknowns](static/filmUnknowns.png)
+(nothing visited yet
+
+![adventure flow](static/flow.gif)
+
+If a user wants to start over in their exploration of a galaxy far, far away, they simply need to go to the home page and click the reset button, which will dispatch an action and reset all the state in the redux store.
+
+If a user leaves the app and comes back, their progress will be as they left it. This is due to the use of redux-persist to keep the redux store in localStorage.
+
+## NOTE:
+
+All UI design is built the Bootstrap css framework, with some custom css built in as well.
